@@ -73,12 +73,12 @@
                         </section>
                         <!-- CHATS -->
                         <section id="chatSelection">
-                            <div class="d-flex align-items-center p-2">
-                                <div class="">
-                                    <img class="avatarImg m" src="./img/avatar_1.jpg" alt="">
+                            <div v-for="contact in contacts" class="d-flex align-items-center p-2">
+                                <div>
+                                    <img class="avatarImg" :src="contact.avatar" alt="">
                                 </div>
                                 <div class="m-2">
-                                    <h2 class="titles mb-0">Michele</h2>
+                                    <h2 class="titles mb-0">{{contact.name}}</h2>
                                     <span class="text-secondary">Ultimo messaggio inviato</span>
                                 </div>
                                 <div class="ms-auto align-self-start">
