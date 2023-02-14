@@ -93,8 +93,10 @@
 
 .textSend {
   background-color: #d5f9ba;
+  align-self: flex-end;
 }
 
 .textReceived {
   background-color: #ffffff;
+  align-self: flex-start;
 }

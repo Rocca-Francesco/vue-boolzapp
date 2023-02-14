@@ -92,15 +92,16 @@
                             </div>
                         </section>
                     </div>
+                    <!-- SEZIONE PRINCIPALE DI DESTRA -->
                     <div class="col-8 p-0">
                         <!-- CHAT ACTIVE -->
                         <!-- sezione profilo chat principale -->
                         <section id="chatActiveMain" class="d-flex px-2">
                             <div class="d-flex align-items-center">
-                                <img class="avatarImg" src="./img/avatar_1.jpg" alt="">
+                                <img class="avatarImg" :src="contacts[activeList].avatar" alt="">
                             </div>
                             <div class="m-2">
-                                <h1 class="d-inline-block mb-0 titles">Michele</h1>
+                                <h1 class="d-inline-block mb-0 titles">{{contacts[activeList].name}}</h1>
                                 <span class="d-block">Ultimo accesso oggi alle 12:00</span>
                             </div>
                             <!-- sezione icons chat principale -->
@@ -113,12 +114,9 @@
                         <!-- CURRENT CHAT -->
                         <section id="currentChat" class="p-5">
                             <div class="d-flex flex-column">
-                                <div class="textSend align-self-end me-5 p-1 rounded">
-                                    <span class="d-block">Hai portato a spasso il cane?</span>
-                                    <span class="d-block text-end text-secondary messageHours">15:30</span>
-                                </div>
-                                <div class="textReceived align-self-start me-5 p-1 rounded">
-                                    <span class="d-block">Hai portato a spasso il cane?</span>
+                                <div v-for="message in contacts[activeList].messages" class="me-5 my-2 p-2 rounded"
+                                    :class="(message.status == 'sent') ? 'textSend' : 'textReceived'">
+                                    <span class="d-block">{{message.text}}</span>
                                     <span class="d-block text-end text-secondary messageHours">15:30</span>
                                 </div>
                             </div>
