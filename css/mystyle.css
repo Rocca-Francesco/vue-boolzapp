@@ -50,3 +50,10 @@
   line-height: 2rem;
   border-radius: 50%;
 }
+
+/* SEARCHBAR */
+
+#searchbar {
+  background-color: #eaeaea;
+  border: 1px solid #b1b1b1;
+}
