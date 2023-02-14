@@ -114,6 +114,7 @@
                         <!-- CURRENT CHAT -->
                         <section id="currentChat" class="p-5">
                             <div class="d-flex flex-column">
+                                <!-- mostro la chat in base a quella selezionata dall'utente -->
                                 <div v-for="message in contacts[activeList].messages" class="me-5 my-2 p-2 rounded"
                                     :class="(message.status == 'sent') ? 'textSend' : 'textReceived'">
                                     <span class="d-block">{{message.text}}</span>
