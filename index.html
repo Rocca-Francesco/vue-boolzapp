@@ -34,7 +34,7 @@
             <div id="app" class="container-md py-2">
                 <div class="row">
                     <!-- SEZIONE PRINCIPALE DI SINISTRA -->
-                    <div class="col-4">
+                    <div class="col-4 p-0">
                         <!-- MY PROFILE -->
                         <section id="myProfile" class="d-flex p-2 justify-content-between">
                             <!-- sezione profilo personale -->
@@ -73,21 +73,56 @@
                         </section>
                         <!-- CHATS -->
                         <section id="chatSelection">
-                            <div v-for="contact in contacts" class="d-flex align-items-center p-2">
+                            <!-- script per ogni chat -->
+                            <div v-for="contact in contacts" class="d-flex align-items-center p-2 chat">
+                                <!-- img chat -->
                                 <div>
                                     <img class="avatarImg" :src="contact.avatar" alt="">
                                 </div>
+                                <!-- users chat -->
                                 <div class="m-2">
                                     <h2 class="titles mb-0">{{contact.name}}</h2>
                                     <span class="text-secondary">Ultimo messaggio inviato</span>
                                 </div>
+                                <!-- ora chat -->
                                 <div class="ms-auto align-self-start">
-                                    <span class="text-secondary">12:00</span>
+                                    <span class="text-secondary messageHours">12:00</span>
                                 </div>
                             </div>
                         </section>
                     </div>
-                    <div class="col-8"></div>
+                    <div class="col-8 p-0">
+                        <!-- CHAT ACTIVE -->
+                        <!-- sezione profilo chat principale -->
+                        <section id="chatActiveMain" class="d-flex px-2">
+                            <div class="d-flex align-items-center">
+                                <img class="avatarImg" src="./img/avatar_1.jpg" alt="">
+                            </div>
+                            <div class="m-2">
+                                <h1 class="d-inline-block mb-0 titles">Michele</h1>
+                                <span class="d-block">Ultimo accesso oggi alle 12:00</span>
+                            </div>
+                            <!-- sezione icons chat principale -->
+                            <div class="d-flex align-items-center iconsSize  ms-auto" id="myIcons">
+                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <span><i class="fa-solid fa-paperclip"></i></span>
+                                <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                            </div>
+                        </section>
+                        <!-- CURRENT CHAT -->
+                        <section id="currentChat" class="p-5">
+                            <div class="d-flex flex-column">
+                                <div class="textSend align-self-end me-5 p-1 rounded">
+                                    <span class="d-block">Hai portato a spasso il cane?</span>
+                                    <span class="d-block text-end text-secondary messageHours">15:30</span>
+                                </div>
+                                <div class="textReceived align-self-start me-5 p-1 rounded">
+                                    <span class="d-block">Hai portato a spasso il cane?</span>
+                                    <span class="d-block text-end text-secondary messageHours">15:30</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

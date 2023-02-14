@@ -12,9 +12,13 @@
   font-size: 1rem;
 }
 
+.messageHours {
+  font-size: 0.7rem;
+}
+
 /* background pagina */
 #backgroundPage {
-  background-color: #d7dbd6;
+  background-color: #d9dbd4;
 }
 
 #backgroundPageGreen {
@@ -61,5 +65,32 @@
 /* CHATS */
 #chatSelection {
   background-color: #ffffff;
+  /* max-height: 80vh; */
+}
+
+.chat {
   border: 1px solid #b1b1b1;
+}
+
+/* CHAT ACTIVE */
+
+#chatActiveMain {
+  background-color: #eaeaea;
+  border: 1px solid #b1b1b1;
+}
+
+/* CURRENT CHAT */
+
+#currentChat {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/mine.jpg");
+}
+
+.textSend {
+  background-color: #d5f9ba;
+}
+
+.textReceived {
+  background-color: #ffffff;
 }
