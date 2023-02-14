@@ -68,6 +68,10 @@
   /* max-height: 80vh; */
 }
 
+.chatActiveList {
+  background-color: #e9ebeb;
+}
+
 .chat {
   border: 1px solid #b1b1b1;
 }

@@ -165,7 +165,16 @@ createApp({
             }
           ],
         }
-      ]
+      ],
+
+      activeList: 0,
+    }
+
+  },
+
+  methods: {
+    changeActiveList(index) {
+      this.activeList = index;
     }
   }
 }).mount('#app')

@@ -74,7 +74,8 @@
                         <!-- CHATS -->
                         <section id="chatSelection">
                             <!-- script per ogni chat -->
-                            <div v-for="contact in contacts" class="d-flex align-items-center p-2 chat">
+                            <div v-for="(contact, index) in contacts" class="d-flex align-items-center p-2 chat"
+                                :class="(index == activeList) ? 'chatActiveList' : ''" @click="changeActiveList(index)">
                                 <!-- img chat -->
                                 <div>
                                     <img class="avatarImg" :src="contact.avatar" alt="">
