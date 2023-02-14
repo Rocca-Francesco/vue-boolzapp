@@ -1,3 +1,17 @@
+/* UTILS */
+.avatarImg {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.titles {
+  font-size: 1.2rem;
+}
+
+.iconsSize {
+  font-size: 1rem;
+}
+
 /* background pagina */
 #backgroundPage {
   background-color: #d7dbd6;
@@ -6,4 +20,25 @@
 #backgroundPageGreen {
   background-color: #009688;
   height: 20vh;
+}
+
+/* MY PROFILE */
+
+#myProfile {
+  background-color: #eaeaea;
+  border: 1px solid #b1b1b1;
+}
+
+#myIcons {
+  color: #b1b1b1;
+}
+
+#myIcons span {
+  margin: 5px;
+}
+
+/* NOTIFICATION */
+
+.notificationColor {
+  background-color: #8edafc;
 }
