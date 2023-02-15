@@ -220,34 +220,34 @@ createApp({
       for (contact of this.contacts) {
         contact.visible = true;
         console.log(this.contact);
-      }
-      // definisco la lunghezza di caratteri da confrontare
-      const lengthToCompare = this.currentSearch.length;
+      };
 
-      // creo il mio nuovo array con la quantità di caratteri da confrontare
-      let newContacts = [];
+      if (this.currentSearch.length != 0) {
+        // definisco la lunghezza di caratteri da confrontare
+        const lengthToCompare = this.currentSearch.length;
 
-      // definisco una variabile per salvare i miei nuovi nomi
-      let newName = "";
-      for (contact of this.contacts) {
-        for (let i = 0; i < lengthToCompare; i++) {
-          newName = newName + contact.name[i];
-        };
-        newContacts.push(newName);
-        newName = "";
-      }
+        // creo il mio nuovo array con la quantità di caratteri da confrontare
+        let newContacts = [];
 
-      // confronto ogni nuovo contatto con la mia ricerca 
-      for (let y = 0; y < newContacts.length; y++) {
+        // definisco una variabile per salvare i miei nuovi nomi
+        let newName = "";
+        for (contact of this.contacts) {
+          for (let i = 0; i < lengthToCompare; i++) {
+            newName = newName + contact.name[i];
+          };
+          newContacts.push(newName);
+          newName = "";
+        }
 
-        if (this.currentSearch != newContacts[y]) {
+        // confronto ogni nuovo contatto con la mia ricerca 
+        for (let y = 0; y < newContacts.length; y++) {
 
-          this.contacts[y].visible = false;
-
-
+          if (this.currentSearch != newContacts[y]) {
+            this.contacts[y].visible = false;
+          };
         };
       };
 
-    }
+    },
   }
 }).mount('#app')
