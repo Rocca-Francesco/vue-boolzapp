@@ -168,6 +168,8 @@ createApp({
       ],
 
       activeList: 0,
+
+      currentMessage: ""
     }
 
   },
@@ -175,6 +177,15 @@ createApp({
   methods: {
     changeActiveList(index) {
       this.activeList = index;
+    },
+
+    addNewMessage(activeList) {
+      const newMessage = this.currentMessage;
+      this.contacts[activeList].messages.push({
+        date: '10/01/2020 15:51:00',
+        text: newMessage,
+        status: 'sent'
+      })
     }
   }
 }).mount('#app')
