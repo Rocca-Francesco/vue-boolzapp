@@ -131,7 +131,7 @@
                             <!-- sezione text -->
                             <div class="flex-grow-1">
                                 <input type="text" v-model="currentMessage"
-                                    @keyUp.enter="addNewMessage(this.activeList)">
+                                    @keyUp.enter="addNewMessage(), sendAnswer()">
                             </div>
                             <!-- sezione audio -->
                             <div>

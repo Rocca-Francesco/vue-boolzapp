@@ -166,10 +166,12 @@ createApp({
           ],
         }
       ],
-
+      // variabile per sapere la chat attiva
       activeList: 0,
-
-      currentMessage: ""
+      // variabile per intercettare il messaggio scritto
+      currentMessage: "",
+      // variabile per saper se inivare una risposta
+      userAnswer: false,
     }
 
   },
@@ -179,13 +181,27 @@ createApp({
       this.activeList = index;
     },
 
-    addNewMessage(activeList) {
+    addNewMessage() {
       const newMessage = this.currentMessage;
-      this.contacts[activeList].messages.push({
+      this.contacts[this.activeList].messages.push({
         date: '10/01/2020 15:51:00',
         text: newMessage,
         status: 'sent'
-      })
-    }
+      });
+      this.userAnswer = true;
+    },
+
+    sendAnswer() {
+      if (this.userAnswer == true) {
+        setTimeout(() => {
+          this.contacts[this.activeList].messages.push({
+            date: '10/01/2020 15:51:00',
+            text: 'Ok',
+            status: 'received'
+          });
+          this.userAnswer = false;
+        }, 1000);
+      }
+    },
   }
 }).mount('#app')
