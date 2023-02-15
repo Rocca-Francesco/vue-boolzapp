@@ -10,6 +10,8 @@
 
 .iconsSize {
   font-size: 1rem;
+  color: #b1b1b1;
+  margin: 5px;
 }
 
 .messageHours {
@@ -26,6 +28,13 @@
   height: 20vh;
 }
 
+/* Dimensioni app */
+
+#app {
+  width: 100vw;
+  max-height: 100vh;
+}
+
 /* MY PROFILE */
 
 #myProfile {
@@ -33,13 +42,6 @@
   border: 1px solid #b1b1b1;
 }
 
-#myIcons {
-  color: #b1b1b1;
-}
-
-#myIcons span {
-  margin: 5px;
-}
 
 /* NOTIFICATION */
 
@@ -53,6 +55,7 @@
   height: 2rem;
   line-height: 2rem;
   border-radius: 50%;
+  align-self: center;
 }
 
 /* SEARCHBAR */
@@ -91,6 +94,11 @@
   background-image: url("../img/mine.jpg");
 }
 
+.message {
+  min-width: 20rem;
+  max-width: 30rem;
+}
+
 .textSend {
   background-color: #d5f9ba;
   align-self: flex-end;
@@ -99,4 +107,14 @@
 .textReceived {
   background-color: #ffffff;
   align-self: flex-start;
+}
+
+/* SEND MESSAGE */
+
+#sendMessage div {
+  margin: 0.5rem;
+}
+
+#sendMessage div>input {
+  width: 100%;
 }

@@ -43,10 +43,10 @@
                                 <h1 class="d-inline-block m-2 titles">Sofia</h1>
                             </div>
                             <!-- sezione icons personale -->
-                            <div class="d-flex align-items-center iconsSize" id="myIcons">
-                                <span><i class="fa-solid fa-circle-notch"></i></span>
-                                <span><i class="fa-solid fa-message"></i></span>
-                                <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                            <div class="d-flex align-items-center" id="myIcons">
+                                <span><i class="fa-solid fa-circle-notch iconsSize"></i></span>
+                                <span><i class="fa-solid fa-message iconsSize"></i></span>
+                                <span><i class="fa-solid fa-ellipsis-vertical iconsSize"></i></span>
                             </div>
                         </section>
                         <!-- NOTIFICATION -->
@@ -105,21 +105,36 @@
                                 <span class="d-block">Ultimo accesso oggi alle 12:00</span>
                             </div>
                             <!-- sezione icons chat principale -->
-                            <div class="d-flex align-items-center iconsSize  ms-auto" id="myIcons">
-                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <span><i class="fa-solid fa-paperclip"></i></span>
-                                <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                            <div class="d-flex align-items-center ms-auto" id="myIcons">
+                                <span><i class="fa-solid fa-magnifying-glass iconsSize"></i></span>
+                                <span><i class="fa-solid fa-paperclip iconsSize"></i></span>
+                                <span><i class="fa-solid fa-ellipsis-vertical iconsSize"></i></span>
                             </div>
                         </section>
                         <!-- CURRENT CHAT -->
                         <section id="currentChat" class="p-5">
                             <div class="d-flex flex-column">
                                 <!-- mostro la chat in base a quella selezionata dall'utente -->
-                                <div v-for="message in contacts[activeList].messages" class="me-5 my-2 p-2 rounded"
+                                <div v-for="message in contacts[activeList].messages" class="message my-2 p-2 rounded"
                                     :class="(message.status == 'sent') ? 'textSend' : 'textReceived'">
                                     <span class="d-block">{{message.text}}</span>
                                     <span class="d-block text-end text-secondary messageHours">15:30</span>
                                 </div>
+                            </div>
+                        </section>
+                        <!-- SEND MESSAGE -->
+                        <section id="sendMessage" class="d-flex align-items-center">
+                            <!-- sezione smiles -->
+                            <div>
+                                <span><i class="fa-regular fa-face-smile iconsSize"></i></span>
+                            </div>
+                            <!-- sezione text -->
+                            <div class="flex-grow-1">
+                                <input type="text">
+                            </div>
+                            <!-- sezione audio -->
+                            <div>
+                                <span><i class="fa-solid fa-microphone iconsSize"></i></span>
                             </div>
                         </section>
                     </div>
