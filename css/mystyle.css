@@ -19,8 +19,8 @@
 }
 
 /* background pagina */
-#backgroundPage {
-  background-color: #d9dbd4;
+body {
+  background-color: #d7dbd7;
 }
 
 #backgroundPageGreen {
@@ -51,11 +51,16 @@
 
 .notificationIcon {
   color: #8edafc;
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
   border-radius: 50%;
   align-self: center;
+}
+
+.notificationIcon>i {
+  font-size: 1.4rem;
+  margin-left: 0.16rem;
 }
 
 /* SEARCHBAR */
@@ -86,6 +91,10 @@
   border: 1px solid #b1b1b1;
 }
 
+.disableBySearch {
+  display: none;
+}
+
 /* CURRENT CHAT */
 
 #currentChat {
@@ -110,6 +119,10 @@
 }
 
 /* SEND MESSAGE */
+#sendMessage {
+  background-color: #eaeaea;
+  border: 1px solid #b1b1b1;
+}
 
 #sendMessage div {
   margin: 0.5rem;

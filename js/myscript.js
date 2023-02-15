@@ -172,6 +172,8 @@ createApp({
       currentMessage: "",
       // variabile per saper se inivare una risposta
       userAnswer: false,
+      // variabile per intercettare la ricerca
+      currentSearch: "",
     }
 
   },
@@ -182,6 +184,7 @@ createApp({
       this.activeList = index;
     },
 
+    // per scrivere un nuovo messaggio
     addNewMessage() {
       // salvo il nuovo messaggio in una varibile scollegata 
       const newMessage = this.currentMessage;
@@ -195,6 +198,7 @@ createApp({
       this.userAnswer = true;
     },
 
+    // per mandare una risposta
     sendAnswer() {
       // controllo se devo rispondere
       if (this.userAnswer == true) {
@@ -209,5 +213,33 @@ createApp({
         }, 1000);
       }
     },
+
+    // trova un contatto
+    findContact() {
+      // definisco la lunghezza di caratteri da confrontare
+      const lengthToCompare = this.currentSearch.length;
+
+      // creo il mio nuovo array con la quantità di caratteri da confrontare
+      let newContacts = [];
+
+      // definisco una variabile per salvare i miei nuovi nomi
+      let newName = "";
+      for (contact of this.contacts) {
+        for (let i = 0; i < lengthToCompare; i++) {
+          newName = newName + contact.name[i];
+        };
+        newContacts.push(newName);
+        newName = "";
+      }
+
+      // confronto i nuovi contatti con la mia ricerca 
+      for (let y = 0; y < newContacts.length; y++) {
+        if (this.currentSearch != newContacts[y]) {
+          this.contacts[y].visible = !this.contacts[y].visible;
+          console.log(this.contacts[y]);
+        };
+      };
+
+    }
   }
 }).mount('#app')

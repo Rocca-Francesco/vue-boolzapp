@@ -31,7 +31,7 @@
     <!-- classi solo per lo sfondo -->
     <div id="backgroundPage">
         <div id="backgroundPageGreen">
-            <div id="app" class="container-md py-2">
+            <div id="app" class="container-md py-3">
                 <div class="row">
                     <!-- SEZIONE PRINCIPALE DI SINISTRA -->
                     <div class="col-4 p-0">
@@ -52,8 +52,8 @@
                         <!-- NOTIFICATION -->
                         <section id="notification" class="notificationColor d-flex p-2">
                             <!-- icona -->
-                            <span class="notificationIcon bg-light p-2 m-2">
-                                <i class="fa-solid fa-bell-slash"></i>
+                            <span class="notificationIcon d-flex bg-light p-2 m-2">
+                                <i class="fa-solid fa-bell-slash align-self-center"></i>
                             </span>
                             <!-- scritte -->
                             <span>
@@ -68,14 +68,15 @@
                                 <button class="btn btn-outline-secondary px-4" type="button" id="button-addon1"><i
                                         class="fa-solid fa-magnifying-glass"></i></button>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una chat"
-                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                    v-model="currentSearch" @keyUp.enter="findContact()">
                             </div>
                         </section>
                         <!-- CHATS -->
                         <section id="chatSelection">
                             <!-- script per ogni chat -->
                             <div v-for="(contact, index) in contacts" class="d-flex align-items-center p-2 chat"
-                                :class="(index == activeList) ? 'chatActiveList' : ''" @click="changeActiveList(index)">
+                                :class="(index == activeList) ? 'chatActiveList' : ''" @click="changeActiveList(index)"
+                                v-show="contact.visible" @click="changeActiveList(index)">
                                 <!-- img chat -->
                                 <div>
                                     <img class="avatarImg" :src="contact.avatar" alt="">
