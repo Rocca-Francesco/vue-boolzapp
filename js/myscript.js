@@ -177,23 +177,29 @@ createApp({
   },
 
   methods: {
+    // per capire che chat mostrare
     changeActiveList(index) {
       this.activeList = index;
     },
 
     addNewMessage() {
+      // salvo il nuovo messaggio in una varibile scollegata 
       const newMessage = this.currentMessage;
+      // pusho, in base alla chat attiva, nell'array messaggi
       this.contacts[this.activeList].messages.push({
         date: '10/01/2020 15:51:00',
         text: newMessage,
         status: 'sent'
       });
+      // attivo la risposta
       this.userAnswer = true;
     },
 
     sendAnswer() {
+      // controllo se devo rispondere
       if (this.userAnswer == true) {
         setTimeout(() => {
+          // creo la risposta automatica
           this.contacts[this.activeList].messages.push({
             date: '10/01/2020 15:51:00',
             text: 'Ok',
