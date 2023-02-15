@@ -216,6 +216,11 @@ createApp({
 
     // trova un contatto
     findContact() {
+      // resetto la visibilità per ogni eventuale nuova ricerca
+      for (contact of this.contacts) {
+        contact.visible = true;
+        console.log(this.contact);
+      }
       // definisco la lunghezza di caratteri da confrontare
       const lengthToCompare = this.currentSearch.length;
 
@@ -232,11 +237,14 @@ createApp({
         newName = "";
       }
 
-      // confronto i nuovi contatti con la mia ricerca 
+      // confronto ogni nuovo contatto con la mia ricerca 
       for (let y = 0; y < newContacts.length; y++) {
+
         if (this.currentSearch != newContacts[y]) {
-          this.contacts[y].visible = !this.contacts[y].visible;
-          console.log(this.contacts[y]);
+
+          this.contacts[y].visible = false;
+
+
         };
       };
 
