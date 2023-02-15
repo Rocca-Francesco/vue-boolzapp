@@ -82,6 +82,7 @@ body {
 
 .chat {
   border: 1px solid #b1b1b1;
+  display: flex;
 }
 
 /* CHAT ACTIVE */
