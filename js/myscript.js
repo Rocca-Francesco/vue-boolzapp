@@ -14,21 +14,24 @@ createApp({
               text: 'Hai portato a spasso il cane?',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:50:00',
               text: 'Ricordati di stendere i panni',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 16:15:22',
               text: 'Tutto fatto!',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -42,21 +45,24 @@ createApp({
               text: 'Ciao come stai?',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '20/03/2020 16:30:55',
               text: 'Bene grazie! Stasera ci vediamo?',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '20/03/2020 16:35:00',
               text: 'Mi piacerebbe ma devo andare a fare la spesa.',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -70,21 +76,24 @@ createApp({
               text: 'La Marianna va in campagna',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '28/03/2020 10:20:10',
               text: 'Sicuro di non aver sbagliato chat?',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '28/03/2020 16:15:22',
               text: 'Ah scusa!',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -98,14 +107,16 @@ createApp({
               text: 'Lo sai che ha aperto una nuova pizzeria?',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:50:00',
               text: 'Si, ma preferirei andare al cinema',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -119,14 +130,16 @@ createApp({
               text: 'Ricordati di chiamare la nonna',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:50:00',
               text: 'Va bene, stasera la sento',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -140,21 +153,24 @@ createApp({
               text: 'Ciao Claudia, hai novità?',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:50:00',
               text: 'Non ancora',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:51:00',
               text: 'Nessuna nuova, buona nuova',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -168,14 +184,16 @@ createApp({
               text: 'Fai gli auguri a Martina che è il suo compleanno!',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:50:00',
               text: 'Grazie per avermelo ricordato, le scrivo subito!',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         },
@@ -189,21 +207,24 @@ createApp({
               text: 'Ciao, andiamo a mangiare la pizza stasera?',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:50:00',
               text: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
               status: 'sent',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             },
             {
               date: '10/01/2020 15:51:00',
               text: 'OK!!',
               status: 'received',
               // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-              upHere: false
+              upHere: false,
+              deleteMe: false
             }
           ],
         }
@@ -237,7 +258,8 @@ createApp({
         text: newMessage,
         status: 'sent',
         // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-        upHere: false
+        upHere: false,
+        deleteMe: false
       });
       // attivo la risposta
       this.userAnswer = true;
@@ -254,7 +276,8 @@ createApp({
             text: 'Ok',
             status: 'received',
             // variabile per vedere se l'utente sta cercando di selezionare un messaggio
-            upHere: false
+            upHere: false,
+            deleteMe: false
           });
           this.userAnswer = false;
         }, 1000);
@@ -298,12 +321,20 @@ createApp({
     },
 
     showMe(index) {
-      if (index)
-        this.upHere = true;
+      this.contacts[this.activeList].messages[index].upHere = true;
     },
 
     dontShowMe(index) {
-      this.upHere = false;
+      this.contacts[this.activeList].messages[index].upHere = false;
+      this.contacts[this.activeList].messages[index].deleteMe = false;
+    },
+
+    showDelete(index) {
+      this.contacts[this.activeList].messages[index].deleteMe = true;
+    },
+
+    deleteMessagaFromArray(index) {
+      this.contacts[this.activeList].messages.splice(index, 1);
     }
   }
 }).mount('#app')

@@ -148,14 +148,6 @@ body {
   top: -5px;
 }
 
-.angleDeleteShow {
-  display: block;
-}
-
-.angleDeleteHide {
-  display: none;
-}
-
 .deleteMessage {
   padding: 10px;
   width: fit-content;
@@ -165,6 +157,14 @@ body {
   position: absolute;
   right: 10px;
   top: 25px;
+}
+
+.angleDeleteShow {
+  display: block;
+}
+
+.angleDeleteHide {
+  display: none;
 }
 
 /* SEND MESSAGE */

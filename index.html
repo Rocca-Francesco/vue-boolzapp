@@ -121,10 +121,13 @@
                         <!-- per pop-up delete message -->
                         <div>
                             <div class="angleDelete"
-                                :class="(message.upHere == false) ? 'angleDeleteShow' : 'angleDeleteHide'">
+                                :class="(message.upHere == true) ? 'angleDeleteShow' : 'angleDeleteHide'"
+                                @click="showDelete(index)">
                                 <span><i class="fa-solid fa-angle-down"></i></span>
                             </div>
-                            <div class="deleteMessage">
+                            <div class="deleteMessage"
+                                :class="(message.deleteMe == true) ? 'angleDeleteShow' : 'angleDeleteHide'"
+                                @click="deleteMessagaFromArray(index)">
                                 <span>Elimina messaggio</span>
                             </div>
                         </div>
