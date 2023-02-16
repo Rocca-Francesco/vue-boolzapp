@@ -126,6 +126,7 @@ body {
 .message {
   min-width: 20rem;
   max-width: 30rem;
+  position: relative;
 }
 
 .textSend {
@@ -136,6 +137,34 @@ body {
 .textReceived {
   background-color: #ffffff;
   align-self: flex-start;
+}
+
+.angleDelete {
+  display: none;
+  margin: 10px;
+  color: grey;
+  position: absolute;
+  right: 4px;
+  top: -5px;
+}
+
+.angleDeleteShow {
+  display: block;
+}
+
+.angleDeleteHide {
+  display: none;
+}
+
+.deleteMessage {
+  padding: 10px;
+  width: fit-content;
+  display: none;
+  background-color: lightblue;
+  border-radius: 5px;
+  position: absolute;
+  right: 10px;
+  top: 25px;
 }
 
 /* SEND MESSAGE */

@@ -113,10 +113,21 @@
             <section id="currentChat" class="p-5">
                 <div class="d-flex flex-column">
                     <!-- mostro la chat in base a quella selezionata dall'utente -->
-                    <div v-for="message in contacts[activeList].messages" class="message my-2 p-2 rounded"
-                        :class="(message.status == 'sent') ? 'textSend' : 'textReceived'">
+                    <div v-for="(message, index) in contacts[activeList].messages" class="message my-2 p-2 rounded"
+                        :class="(message.status == 'sent') ? 'textSend' : 'textReceived'" @mouseover="showMe(index)"
+                        @mouseleave="dontShowMe(index)">
                         <span class="d-block">{{message.text}}</span>
                         <span class="d-block text-end text-secondary messageHours">15:30</span>
+                        <!-- per pop-up delete message -->
+                        <div>
+                            <div class="angleDelete"
+                                :class="(message.upHere == false) ? 'angleDeleteShow' : 'angleDeleteHide'">
+                                <span><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                            <div class="deleteMessage">
+                                <span>Elimina messaggio</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
