@@ -28,123 +28,118 @@
 </head>
 
 <body>
-    <!-- classi solo per lo sfondo -->
-    <div id="backgroundPage">
-        <div id="backgroundPageGreen">
-            <div id="app" class="container-md py-3">
-                <div class="row">
-                    <!-- SEZIONE PRINCIPALE DI SINISTRA -->
-                    <div class="col-4 p-0">
-                        <!-- MY PROFILE -->
-                        <section id="myProfile" class="d-flex p-2 justify-content-between">
-                            <!-- sezione profilo personale -->
-                            <div class="d-flex align-items-center">
-                                <img class="avatarImg" src="./img/avatar_io.jpg" alt="io">
-                                <h1 class="d-inline-block m-2 titles">Sofia</h1>
-                            </div>
-                            <!-- sezione icons personale -->
-                            <div class="d-flex align-items-center" id="myIcons">
-                                <span><i class="fa-solid fa-circle-notch iconsSize"></i></span>
-                                <span><i class="fa-solid fa-message iconsSize"></i></span>
-                                <span><i class="fa-solid fa-ellipsis-vertical iconsSize"></i></span>
-                            </div>
-                        </section>
-                        <!-- NOTIFICATION -->
-                        <section id="notification" class="notificationColor d-flex p-2">
-                            <!-- icona -->
-                            <span class="notificationIcon d-flex bg-light p-2 m-2">
-                                <i class="fa-solid fa-bell-slash align-self-center"></i>
-                            </span>
-                            <!-- scritte -->
-                            <span>
-                                <h5 class="titles mb-0">Ricevi notifiche di nuovi messaggi</h5>
-                                <span class="d-block text-decoration-underline text-secondary ">Attiva notifiche
-                                    desktop</span>
-                            </span>
-                        </section>
-                        <!-- SEARCHBAR -->
-                        <section id="searchbar" class="p-2">
-                            <div class="input-group">
-                                <button class="btn btn-outline-secondary px-4" type="button" id="button-addon1"
-                                    @click="findContact()"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una chat"
-                                    v-model="currentSearch" @keyUp.enter="findContact()">
-                            </div>
-                        </section>
-                        <!-- CHATS -->
-                        <section id="chatSelection">
-                            <!-- script per ogni chat -->
-                            <div v-show="contact.visible" v-for="(contact, index) in contacts"
-                                class="align-items-center p-2 chat"
-                                :class="(index == activeList) ? 'chatActiveList' : ''" @click="changeActiveList(index)"
-                                @click="changeActiveList(index)">
-                                <!-- img chat -->
-                                <div>
-                                    <img class="avatarImg" :src="contact.avatar" alt="">
-                                </div>
-                                <!-- users chat -->
-                                <div class="m-2">
-                                    <h2 class="titles mb-0">{{contact.name}}</h2>
-                                    <span class="text-secondary">Ultimo messaggio inviato</span>
-                                </div>
-                                <!-- ora chat -->
-                                <div class="ms-auto align-self-start">
-                                    <span class="text-secondary messageHours">12:00</span>
-                                </div>
-                            </div>
-                        </section>
+    <div id="app" class="container-md py-3">
+        <div class="row">
+            <!-- SEZIONE PRINCIPALE DI SINISTRA -->
+            <div class="col-4 p-0">
+                <!-- MY PROFILE -->
+                <section id="myProfile" class="d-flex p-2 justify-content-between">
+                    <!-- sezione profilo personale -->
+                    <div class="d-flex align-items-center">
+                        <img class="avatarImg" src="./img/avatar_io.jpg" alt="io">
+                        <h1 class="d-inline-block m-2 titles">Sofia</h1>
                     </div>
-                    <!-- SEZIONE PRINCIPALE DI DESTRA -->
-                    <div class="col-8 p-0">
-                        <!-- CHAT ACTIVE -->
-                        <!-- sezione profilo chat principale -->
-                        <section id="chatActiveMain" class="d-flex px-2">
-                            <div class="d-flex align-items-center">
-                                <img class="avatarImg" :src="contacts[activeList].avatar" alt="">
-                            </div>
-                            <div class="m-2">
-                                <h1 class="d-inline-block mb-0 titles">{{contacts[activeList].name}}</h1>
-                                <span class="d-block">Ultimo accesso oggi alle 12:00</span>
-                            </div>
-                            <!-- sezione icons chat principale -->
-                            <div class="d-flex align-items-center ms-auto" id="myIcons">
-                                <span><i class="fa-solid fa-magnifying-glass iconsSize"></i></span>
-                                <span><i class="fa-solid fa-paperclip iconsSize"></i></span>
-                                <span><i class="fa-solid fa-ellipsis-vertical iconsSize"></i></span>
-                            </div>
-                        </section>
-                        <!-- CURRENT CHAT -->
-                        <section id="currentChat" class="p-5">
-                            <div class="d-flex flex-column">
-                                <!-- mostro la chat in base a quella selezionata dall'utente -->
-                                <div v-for="message in contacts[activeList].messages" class="message my-2 p-2 rounded"
-                                    :class="(message.status == 'sent') ? 'textSend' : 'textReceived'">
-                                    <span class="d-block">{{message.text}}</span>
-                                    <span class="d-block text-end text-secondary messageHours">15:30</span>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SEND MESSAGE -->
-                        <section id="sendMessage" class="d-flex align-items-center">
-                            <!-- sezione smiles -->
-                            <div>
-                                <span><i class="fa-regular fa-face-smile iconsSize"></i></span>
-                            </div>
-                            <!-- sezione text -->
-                            <div class="flex-grow-1">
-                                <input type="text" v-model="currentMessage"
-                                    @keyUp.enter="addNewMessage(), sendAnswer()">
-                            </div>
-                            <!-- sezione audio -->
-                            <div>
-                                <span><i class="fa-solid fa-microphone iconsSize"></i></span>
-                            </div>
-                        </section>
+                    <!-- sezione icons personale -->
+                    <div class="d-flex align-items-center" id="myIcons">
+                        <span><i class="fa-solid fa-circle-notch iconsSize"></i></span>
+                        <span><i class="fa-solid fa-message iconsSize"></i></span>
+                        <span><i class="fa-solid fa-ellipsis-vertical iconsSize"></i></span>
                     </div>
-                </div>
+                </section>
+                <!-- NOTIFICATION -->
+                <section id="notification" class="notificationColor d-flex p-2">
+                    <!-- icona -->
+                    <span class="notificationIcon d-flex bg-light p-2 m-2">
+                        <i class="fa-solid fa-bell-slash align-self-center"></i>
+                    </span>
+                    <!-- scritte -->
+                    <span>
+                        <h5 class="titles mb-0">Ricevi notifiche di nuovi messaggi</h5>
+                        <span class="d-block text-decoration-underline text-secondary ">Attiva notifiche
+                            desktop</span>
+                    </span>
+                </section>
+                <!-- SEARCHBAR -->
+                <section id="searchbar" class="p-2">
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary px-4" type="button" id="button-addon1"
+                            @click="findContact()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una chat"
+                            v-model="currentSearch" @keyUp.enter="findContact()">
+                    </div>
+                </section>
+                <!-- CHATS -->
+                <section id="chatSelection">
+                    <!-- script per ogni chat -->
+                    <div v-show="contact.visible" v-for="(contact, index) in contacts"
+                        class="align-items-center p-2 chat" :class="(index == activeList) ? 'chatActiveList' : ''"
+                        @click="changeActiveList(index)" @click="changeActiveList(index)">
+                        <!-- img chat -->
+                        <div>
+                            <img class="avatarImg" :src="contact.avatar" alt="">
+                        </div>
+                        <!-- users chat -->
+                        <div class="m-2">
+                            <h2 class="titles mb-0">{{contact.name}}</h2>
+                            <span class="text-secondary">Ultimo messaggio inviato</span>
+                        </div>
+                        <!-- ora chat -->
+                        <div class="ms-auto align-self-start">
+                            <span class="text-secondary messageHours">12:00</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- SEZIONE PRINCIPALE DI DESTRA -->
+            <div class="col-8 p-0">
+                <!-- CHAT ACTIVE -->
+                <!-- sezione profilo chat principale -->
+                <section id="chatActiveMain" class="d-flex px-2">
+                    <div class="d-flex align-items-center">
+                        <img class="avatarImg" :src="contacts[activeList].avatar" alt="">
+                    </div>
+                    <div class="m-2">
+                        <h1 class="d-inline-block mb-0 titles">{{contacts[activeList].name}}</h1>
+                        <span class="d-block">Ultimo accesso oggi alle 12:00</span>
+                    </div>
+                    <!-- sezione icons chat principale -->
+                    <div class="d-flex align-items-center ms-auto" id="myIcons">
+                        <span><i class="fa-solid fa-magnifying-glass iconsSize"></i></span>
+                        <span><i class="fa-solid fa-paperclip iconsSize"></i></span>
+                        <span><i class="fa-solid fa-ellipsis-vertical iconsSize"></i></span>
+                    </div>
+                </section>
+                <!-- CURRENT CHAT -->
+                <section id="currentChat" class="p-5">
+                    <div class="d-flex flex-column">
+                        <!-- mostro la chat in base a quella selezionata dall'utente -->
+                        <div v-for="message in contacts[activeList].messages" class="message my-2 p-2 rounded"
+                            :class="(message.status == 'sent') ? 'textSend' : 'textReceived'">
+                            <span class="d-block">{{message.text}}</span>
+                            <span class="d-block text-end text-secondary messageHours">15:30</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SEND MESSAGE -->
+                <section id="sendMessage" class="d-flex align-items-center">
+                    <!-- sezione smiles -->
+                    <div>
+                        <span><i class="fa-regular fa-face-smile iconsSize"></i></span>
+                    </div>
+                    <!-- sezione text -->
+                    <div class="flex-grow-1">
+                        <input type="text" v-model="currentMessage" @keyUp.enter="addNewMessage(), sendAnswer()">
+                    </div>
+                    <!-- sezione audio -->
+                    <div>
+                        <span><i class="fa-solid fa-microphone iconsSize"></i></span>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>
